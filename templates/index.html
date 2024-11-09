@@ -1,0 +1,167 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Emotion Detection</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Welcome to Emotion Detection</h1>-->
+<!--    <a href="{{ url_for('real_time') }}">Go to Real-time Emotion Detection</a><br><br>-->
+<!--    <a href="{{ url_for('upload_image') }}">Upload Image for Emotion Detection</a><br><br>-->
+<!--    <a href="{{ url_for('stop_music') }}">Stop Music</a>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Emotion Detection</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        .hero{
+            min-height: 100vh;
+            background: url('static/background2.png');
+            background-position: right;
+            background-size:contain;
+            background-repeat: no-repeat;
+        }
+
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 90%;
+            margin: auto;
+            padding-top: 20px;
+        }
+
+        .logo{
+            color: #e78f38;
+            font-size: 30px;
+            font-weight: bolder;
+            transition: .3s;
+        }
+
+        .logo:hover{
+            transform: translateX(20px);
+        }
+        nav ul{
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li{
+            margin: 0 20px;
+        }
+
+        nav ul li a{
+            font-size: 15px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover{
+            color: #e78f38;
+            border-bottom:2px solid #e78f38 ;
+        }
+
+        nav button{
+            background: #e78f38;
+            border: none;
+            color: #fff;
+            padding: 12px 35px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 2rem;
+            transition: .3s;
+        }
+
+        nav button:hover{
+            scale: .8;
+        }
+
+        .content{
+            position: absolute;
+            top: 35%;
+            left: 90px;
+            font-size:30px;
+        }
+
+        h2{
+            font-size: 50px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+        p{
+            font-size: 11px;
+            margin-top: 10px;
+            color: #eee;
+        }
+
+        .content button{
+            margin-top: 50px;
+            background: #e78f38;
+            border: 2px solid #e78f38;
+            color: #fff;
+            padding: 12px 45px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 2rem;
+            transition: .3s;
+        }
+
+        .content button:hover{
+            scale: .8;
+        }
+        .content button.know_more{
+            background: transparent;
+            border: 2px solid #e78f38;
+            color: #e78f38;
+            margin-left: 30px;
+        }
+
+        .content button.know_more:hover{
+            background: #e78f38;
+            color: #eee;
+        }
+    </style>
+</head>
+<body style="min-height: 100vh; background-image: linear-gradient(to right, black, white);">
+    <div class="hero">
+        <nav>
+            <a href="#" class="logo">EMOTISIC</a>
+
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+
+
+            </ul>
+            <button>Stop Music</button>
+        </nav>
+
+        <div class="content">
+            <h2>A Taste Sensation <br> Like No Other</h2>
+            <p style="font-size:15px">A music recommendation system based on emotion suggests songs that match the listener's current mood by
+                <br>analyzing emotional cues from facial expressions.This approach enhances the user experience by aligning music choices with
+                <br>emotional states, offering mood-boosting tracks.
+                 </p>
+
+            <button onclick="window.location.href='{{ url_for('real_time') }}'">Go to Real-time Emotion Detection</button>
+<button onclick="window.location.href='{{ url_for('upload_image') }}'" class="know_more">Upload Image for Emotion Detection</button>
+        </div>
+    </div>
+</body>
+</html>
